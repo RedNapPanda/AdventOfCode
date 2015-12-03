@@ -1,10 +1,10 @@
-package io.not2excel.advent.days
+package io.not2excel.adventofcode.days
 
-import io.not2excel.advent.Main
+import io.not2excel.adventofcode.Main
 
-object DayOne {
+object Day1 {
 
-    val input = Main.sourceFile("d1.data").getLines().next()
+    val input = Main.sourceFile("day1.data").getLines().next()
 
     def main(args: Array[String]): Unit = {
         println("Part 1")

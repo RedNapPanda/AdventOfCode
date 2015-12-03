@@ -1,4 +1,4 @@
-package io.not2excel.advent.template
+package io.not2excel.adventofcode.template
 
 object Template {
 

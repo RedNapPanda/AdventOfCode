@@ -1,12 +1,12 @@
-package io.not2excel.advent.days
+package io.not2excel.adventofcode.days
 
-import io.not2excel.advent.Main
+import io.not2excel.adventofcode.Main
 
 import scala.collection.immutable.HashSet
 
-object DayThree {
+object Day3 {
 
-    val input = Main.sourceFile("d3.data").getLines().next()
+    val input = Main.sourceFile("day3.data").getLines().next()
 
     def main(args: Array[String]): Unit = {
         println("Part 1")

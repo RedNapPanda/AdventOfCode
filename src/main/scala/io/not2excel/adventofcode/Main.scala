@@ -1,4 +1,4 @@
-package io.not2excel.advent
+package io.not2excel.adventofcode
 
 import scala.io.Source
 
