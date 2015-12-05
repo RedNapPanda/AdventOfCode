@@ -8,8 +8,6 @@ object Day4 {
     //    val input = Main.sourceFile("day4.data").getLines().next()
     val input = "bgvyzdsv"
     //It's in day4.data as well
-    val fiveZeros = "00000"
-    val sixZeros = "000000"
 
     def main(args: Array[String]): Unit = {
         println("Part 1")
@@ -30,14 +28,14 @@ object Day4 {
         println(s"$answer")
     }
 
-    def hashFiveZeros(s: String) = md5Hash(s) startsWith fiveZeros
+    def hashFiveZeros(s: String) = md5Hash(s).length <= 27
 
-    def hashSixZeros(s: String) = md5Hash(s) startsWith sixZeros
+    def hashSixZeros(s: String) = md5Hash(s).length <= 26
 
     def md5Hash(s: String) = {
         val msgDigest = MessageDigest.getInstance("MD5")
         msgDigest.reset()
         msgDigest.update(s.getBytes())
-        new BigInteger(1, msgDigest.digest()).toString(16).reverse.padTo(32, '0').reverse
+        new BigInteger(1, msgDigest.digest()).toString(16)
     }
 }
