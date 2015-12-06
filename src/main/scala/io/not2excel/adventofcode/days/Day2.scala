@@ -1,7 +1,7 @@
 package io.not2excel.adventofcode.days
 
 import io.not2excel.adventofcode.Main
-import io.not2excel.adventofcode.template.Template
+import io.not2excel.adventofcode.traits.Template
 
 object Day2 extends Template {
 

@@ -3,7 +3,7 @@ package io.not2excel.adventofcode.days
 import java.math.BigInteger
 import java.security.MessageDigest
 
-import io.not2excel.adventofcode.template.Template
+import io.not2excel.adventofcode.traits.Template
 
 object Day4 extends Template {
 
