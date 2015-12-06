@@ -8,16 +8,12 @@ import io.not2excel.adventofcode.traits.Template
 object Day6 extends Template {
 
     lazy val input = Main.sourceFile("day6.data").getLines().toList
-    lazy val grid = Array.ofDim[Boolean](1000, 1000)
-    lazy val grid2 = Array.ofDim[Int](1000, 1000)
     lazy val regex = Pattern.compile("(.*)\\s(\\d*),(\\d*)\\s.*\\s(\\d*),(\\d*)")
 
     override def partOne(): Unit = {
-        var i = 1
+        val grid = Array.ofDim[Boolean](1000, 1000)
         input.foreach(s => {
             val data = parseData(s)
-            if(i % 50 == 0 || i == input.length) println(s"$i: $data")
-            i += 1
             val start = data._2
             val end = data._3
             val xs = start._1 to end._1
@@ -41,11 +37,9 @@ object Day6 extends Template {
     }
 
     override def partTwo(): Unit = {
-        var i = 1
+        val grid2 = Array.ofDim[Int](1000, 1000)
         input.foreach(s => {
             val data = parseData(s)
-            if(i % 50 == 0 || i == input.length) println(s"$i: $data")
-            i += 1
             val start = data._2
             val end = data._3
             val xs = start._1 to end._1
