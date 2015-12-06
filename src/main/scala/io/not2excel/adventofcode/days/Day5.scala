@@ -1,25 +1,17 @@
 package io.not2excel.adventofcode.days
 
 import io.not2excel.adventofcode.Main
+import io.not2excel.adventofcode.template.Template
 
 
-object Day5 {
+object Day5 extends Template {
 
-    val input = Main.sourceFile("day5.data").getLines().toList
+    lazy val input = Main.sourceFile("day5.data").getLines().toList
 
-    val vowels = Set('a', 'e', 'i', 'o', 'u')
-    val invalidPhrases = Set("ab", "cd", "pq", "xy")
+    lazy val vowels = Set('a', 'e', 'i', 'o', 'u')
+    lazy val invalidPhrases = Set("ab", "cd", "pq", "xy")
 
-    def main(args: Array[String]): Unit = {
-        println("Part 1")
-        partOne()
-        println("======")
-        println("Part 2")
-        partTwo()
-        println("======")
-    }
-
-    def partOne() = {
+    override def partOne() = {
         var count = 0
         input.foreach(line => {
             val tripleVowel = line.count(vowels.contains) >= 3
@@ -32,7 +24,7 @@ object Day5 {
         println(s"Nice String Count: $count")
     }
 
-    def partTwo() = {
+    override def partTwo() = {
         var count = 0
         input.foreach(line => {
             val sandwich = (0 until line.length - 2).exists(i => line(i) == line(i + 2))

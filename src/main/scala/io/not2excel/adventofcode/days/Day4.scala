@@ -3,27 +3,20 @@ package io.not2excel.adventofcode.days
 import java.math.BigInteger
 import java.security.MessageDigest
 
-object Day4 {
+import io.not2excel.adventofcode.template.Template
+
+object Day4 extends Template {
 
     //    val input = Main.sourceFile("day4.data").getLines().next()
-    val input = "bgvyzdsv"
+    lazy val input = "bgvyzdsv"
     //It's in day4.data as well
 
-    def main(args: Array[String]): Unit = {
-        println("Part 1")
-        partOne()
-        println("======")
-        println("Part 2")
-        partTwo()
-        println("======")
-    }
-
-    def partOne() = {
+    override def partOne() = {
         val answer = Iterator.from(0).indexWhere(i => hashFiveZeros(input + i))
         println(s"$answer")
     }
 
-    def partTwo() = {
+    override def partTwo() = {
         val answer = Iterator.from(0).indexWhere(i => hashSixZeros(input + i))
         println(s"$answer")
     }

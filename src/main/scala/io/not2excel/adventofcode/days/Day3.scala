@@ -1,23 +1,15 @@
 package io.not2excel.adventofcode.days
 
 import io.not2excel.adventofcode.Main
+import io.not2excel.adventofcode.template.Template
 
 import scala.collection.immutable.HashSet
 
-object Day3 {
+object Day3 extends Template {
 
-    val input = Main.sourceFile("day3.data").getLines().next()
+    lazy val input = Main.sourceFile("day3.data").getLines().next()
 
-    def main(args: Array[String]): Unit = {
-        println("Part 1")
-        partOne()
-        println("======")
-        println("Part 2")
-        partTwo()
-        println("======")
-    }
-
-    def partOne() = {
+    override def partOne() = {
         var x, y = 0
         var coords: HashSet[(Int, Int)] = HashSet()
         coords += ((x, y))
@@ -33,7 +25,7 @@ object Day3 {
         println(s"Houses: ${coords.size }")
     }
 
-    def partTwo() = {
+    override def partTwo() = {
         var real = true
         var x1, y1, x2, y2 = 0
         var coords1: HashSet[(Int, Int)] = HashSet()
