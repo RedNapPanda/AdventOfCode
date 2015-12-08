@@ -5,15 +5,24 @@ import io.not2excel.adventofcode.traits.Template
 
 import scala.collection.immutable.HashSet
 
-object Day3 extends Template {
+object Day3 {
 
-    lazy val input = Main.sourceFile("day3.data").getLines().next()
+    val data = Main.resource("day3.data").getLines().next()
 
-    override def partOne() = {
+    def main(args: Array[String]) = {
+        println("Part 1")
+        partOne()
+        println("======")
+        println("Part 2")
+        partTwo()
+        println("======")
+    }
+
+    def partOne() = {
         var x, y = 0
         var coords: HashSet[(Int, Int)] = HashSet()
         coords += ((x, y))
-        input.foreach(c => {
+        data.foreach(c => {
             c match {
                 case '<' => x -= 1
                 case 'v' => y -= 1
@@ -22,17 +31,17 @@ object Day3 extends Template {
             }
             coords += ((x, y))
         })
-        println(s"Houses: ${coords.size }")
+        println(s"Houses: ${coords.size}")
     }
 
-    override def partTwo() = {
+    def partTwo() = {
         var real = true
         var x1, y1, x2, y2 = 0
         var coords1: HashSet[(Int, Int)] = HashSet()
         var coords2: HashSet[(Int, Int)] = HashSet()
         coords1 += ((x1, y1))
         coords2 += ((x2, y2))
-        input.foreach(c => {
+        data.foreach(c => {
             if(real) {
                 c match {
                     case '<' => x1 -= 1
@@ -53,6 +62,6 @@ object Day3 extends Template {
             real = !real
         })
         val coords = coords1 ++ coords2
-        println(s"Houses: ${coords.size }")
+        println(s"Houses: ${coords.size}")
     }
 }

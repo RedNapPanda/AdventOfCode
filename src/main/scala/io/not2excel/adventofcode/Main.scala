@@ -8,5 +8,5 @@ object Main {
 
     }
 
-    def sourceFile(name: String) = Source.fromInputStream(getClass.getResourceAsStream(s"/$name"))
+    def resource(name: String) = Source.fromInputStream(getClass.getResourceAsStream(s"/$name"))
 }

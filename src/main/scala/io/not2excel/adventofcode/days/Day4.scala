@@ -5,19 +5,28 @@ import java.security.MessageDigest
 
 import io.not2excel.adventofcode.traits.Template
 
-object Day4 extends Template {
+object Day4 {
 
-    //    val input = Main.sourceFile("day4.data").getLines().next()
-    lazy val input = "bgvyzdsv"
+    //    val data = Main.sourceFile("day4.data").getLines().next()
+    val data = "bgvyzdsv"
     //It's in day4.data as well
 
-    override def partOne() = {
-        val answer = Iterator.from(0).indexWhere(i => hashFiveZeros(input + i))
+    def main(args: Array[String]) = {
+        println("Part 1")
+        partOne()
+        println("======")
+        println("Part 2")
+        partTwo()
+        println("======")
+    }
+
+    def partOne() = {
+        val answer = Iterator.from(0).indexWhere(i => hashFiveZeros(data + i))
         println(s"$answer")
     }
 
-    override def partTwo() = {
-        val answer = Iterator.from(0).indexWhere(i => hashSixZeros(input + i))
+    def partTwo() = {
+        val answer = Iterator.from(0).indexWhere(i => hashSixZeros(data + i))
         println(s"$answer")
     }
 

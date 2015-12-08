@@ -1,16 +1,22 @@
 package io.not2excel.adventofcode.traits
 
-trait Template extends App {
+trait Template {
 
-    println("Part 1")
-    partOne()
-    println("======")
-    println("Part 2")
-    partTwo()
-    println("======")
+    def main(args: Array[String]) = {
+        println("Part 1")
+        partOne()
+        println("======")
+        println("Part 2")
+        partTwo()
+        println("======")
+    }
 
-    def partOne()
+    def partOne() = {
 
-    def partTwo()
+    }
+
+    def partTwo() = {
+
+    }
 
 }

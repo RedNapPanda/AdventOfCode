@@ -3,16 +3,24 @@ package io.not2excel.adventofcode.days
 import java.util.regex.Pattern
 
 import io.not2excel.adventofcode.Main
-import io.not2excel.adventofcode.traits.Template
 
-object Day6 extends Template {
+object Day6 {
 
-    lazy val input = Main.sourceFile("day6.data").getLines().toList
-    lazy val regex = Pattern.compile("(.*)\\s(\\d*),(\\d*)\\s.*\\s(\\d*),(\\d*)")
+    val data = Main.resource("day6.data").getLines().toList
+    val regex = Pattern.compile("(.*)\\s(\\d*),(\\d*)\\s.*\\s(\\d*),(\\d*)")
 
-    override def partOne(): Unit = {
+    def main(args: Array[String]) = {
+        println("Part 1")
+        partOne()
+        println("======")
+        println("Part 2")
+        partTwo()
+        println("======")
+    }
+
+    def partOne(): Unit = {
         val grid = Array.ofDim[Boolean](1000, 1000)
-        input.foreach(s => {
+        data.foreach(s => {
             val data = parseData(s)
             val start = data._2
             val end = data._3
@@ -36,9 +44,9 @@ object Day6 extends Template {
             (m.group(4).toInt, m.group(5).toInt))
     }
 
-    override def partTwo(): Unit = {
+    def partTwo(): Unit = {
         val grid2 = Array.ofDim[Int](1000, 1000)
-        input.foreach(s => {
+        data.foreach(s => {
             val data = parseData(s)
             val start = data._2
             val end = data._3

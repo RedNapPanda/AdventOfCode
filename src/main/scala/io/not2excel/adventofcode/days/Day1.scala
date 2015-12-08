@@ -1,25 +1,33 @@
 package io.not2excel.adventofcode.days
 
 import io.not2excel.adventofcode.Main
-import io.not2excel.adventofcode.traits.Template
 
-object Day1 extends Template {
+object Day1 {
 
-    lazy val input = Main.sourceFile("day1.data").getLines().next()
+    val data = Main.resource("day1.data").getLines().next()
 
-    override def partOne() = {
-        println(s"Floor: ${input.count(_ == '(') - input.count(_ == ')')}")
+    def main(args: Array[String]) = {
+        println("Part 1")
+        partOne()
+        println("======")
+        println("Part 2")
+        partTwo()
+        println("======")
+    }
+
+    def partOne() = {
+        println(s"Floor: ${data.count(_ == '(') - data.count(_ == ')')}")
         println()
     }
 
-    override def partTwo() = {
+    def partTwo() = {
         var position = 0
-        (0 /: input) ((i, c) => {
+        (0 /: data) ((i, c) => {
             position = position + 1
             c match {
                 case '(' => i + 1
                 case ')' =>
-                    if(i == 0) println(s"Basement: ${i-1}, Position: $position")
+                    if(i == 0) println(s"Basement: ${i - 1}, Position: $position")
                     i - 1
             }
         })
