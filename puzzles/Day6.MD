@@ -16,11 +16,6 @@ For example:
 
 After following the instructions, _how many lights are lit_?
 
-Your puzzle answer was `569999`.
-
-The first half of this puzzle is complete! It provides one gold star: *
-
-
 ## --- Part Two ---
 
 You just finish implementing your winning light pattern when you realize you mistranslated Santa's message from Ancient Nordic Elvish.
