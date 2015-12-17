@@ -13,6 +13,11 @@ object Day1 {
         println("Part 2")
         partTwo()
         println("======")
+        println(join("rip", "in", "breakers"))
+    }
+
+    def join(msgs: String*): String = {
+        msgs.mkString(".")
     }
 
     def partOne() = {
