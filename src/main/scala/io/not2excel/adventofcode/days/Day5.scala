@@ -36,8 +36,8 @@ object Day5 {
         var count = 0
         data.foreach(line => {
             val sandwich = (0 until line.length - 2).exists(i => line(i) == line(i + 2))
-            val twoDoubleChars = (0 until line.length - 1).exists(i => (line.drop(i + 1) lastIndexOf line.slice(i, i + 2)) > 0)
-            if(sandwich && twoDoubleChars) {
+            val twoCharPairs = (0 until line.length - 1).exists(i => (line.drop(i + 1) lastIndexOf line.slice(i, i + 2)) > 0)
+            if(sandwich && twoCharPairs) {
                 count += 1
             }
         })
