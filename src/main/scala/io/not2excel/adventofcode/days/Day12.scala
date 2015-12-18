@@ -21,11 +21,7 @@ object Day12 {
     }
 
     def partOne() = {
-        val sum = json.filter {
-                                  case JInt(i) => true
-                                  case _ => false
-                              }.map(j => j.extract[Int]).sum
-        println(s"Sum: $sum")
+        println(s"Sum: ${json.children.map(filterChildren(_, j => false)).sum}")
     }
 
     def partTwo() = {
