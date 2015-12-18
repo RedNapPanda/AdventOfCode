@@ -25,7 +25,7 @@ object Day9 {
     }
 
     def partOne() = {
-        println(s"Min: ${calcRouteDist.max}")
+        println(s"Min: ${calcRouteDist.min}")
     }
 
     def partTwo() = {
