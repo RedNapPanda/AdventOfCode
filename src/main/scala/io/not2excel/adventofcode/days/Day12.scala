@@ -31,7 +31,6 @@ object Day12 {
     def filterChildren(jValue: JValue, filter :(JValue) => Boolean): Int = {
         jValue match {
             case j: JInt => j.extract[Int]
-            case j: JArray => j.children.map(filterChildren(_, filter)).sum
             case j: JObject =>
                 if(filter.apply(j)) 0
                 else j.children.map(filterChildren(_, filter)).sum
