@@ -9,13 +9,13 @@ object Day9 {
     val data = Main.resource("day9.data").getLines().toList
     val RouteRegex = "(.+) to (.+) = ([0-9]+)".r
     var mappedRoutes = HashMap[String, Map[String, Int]]()
+    data.foreach {
+                     case RouteRegex(loc1, loc2, dist) =>
+                         addRoute(loc1, loc2, dist)
+                         addRoute(loc2, loc1, dist)
+                 }
 
     def main(args: Array[String]) = {
-        data.foreach {
-                         case RouteRegex(loc1, loc2, dist) =>
-                             addRoute(loc1, loc2, dist)
-                             addRoute(loc2, loc1, dist)
-                     }
         println("Part 1")
         partOne()
         println("======")
