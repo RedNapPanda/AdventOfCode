@@ -3,7 +3,6 @@ package io.not2excel.adventofcode.days
 import io.not2excel.adventofcode.Main
 
 import scala.collection.immutable.HashMap
-import scala.collection.mutable.ArrayBuffer
 
 object Day13 {
 
